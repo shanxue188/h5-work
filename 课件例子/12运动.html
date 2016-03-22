@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+div{width:200px;height:200px;background:#ccc;margin:100px auto;}
+</style>
+<script>
+function setStyle(obj,name,value){
+	obj.style['Webkit'+name.charAt(0).toUpperCase()+name.substring(1)] = value;
+	obj.style['Moz'+name.charAt(0).toUpperCase()+name.substring(1)] = value;
+	obj.style['Ms'+name.charAt(0).toUpperCase()+name.substring(1)] = value;
+	obj.style['O'+name.charAt(0).toUpperCase()+name.substring(1)] = value;
+	obj.style[name] = value;
+
+
+}
+document.addEventListener('DOMContentLoaded',function(){
+	var oDiv = document.querySelector('div');
+	setStyle(oDiv,'transition','1s all ease');
+	oDiv.onclick = function(){
+		oDiv.style.width = '400px';
+		oDiv.style.height = '400px';
+		oDiv.style.background = 'red';
+	
+	};
+
+},false);
+</script>
+</head>
+
+<body>
+<div></div>
+</body>
+</html>

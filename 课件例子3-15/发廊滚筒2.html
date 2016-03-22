@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+@keyframes test{
+	from{left:0;}
+	to{left:-114px;}
+
+
+}
+.box{width:100px;height:300px;position:relative;top:0;left:0;overflow:hidden;margin:100px auto;}
+.box .bar{width:300px;height:400px;position:absolute;top:0;left:0;background:-webkit-repeating-linear-gradient(-45deg,black 0px,black 20px,#fff 20px,#fff 40px);
+	-webkit-animation-name:test;
+	-webkit-animation-duration:.4s;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-iteration-count:infinite;
+
+}
+</style>
+<script>
+window.onload = function(){
+	var oC1 = document.getElementById('c1');
+	var oC2 = document.getElementById('c2');
+	var oBar = document.querySelector('.bar');
+	oC1.onchange = function(){
+		oBar.style.background = '-webkit-repeating-linear-gradient(-45deg,'+oC1.value+' 0px,'+oC1.value+' 20px,'+oC2.value+' 20px,'+oC2.value+' 40px)';
+	};
+	oC2.onchange = function(){
+		oBar.style.background = '-webkit-repeating-linear-gradient(-45deg,'+oC1.value+' 0px,'+oC1.value+' 20px,'+oC2.value+' 20px,'+oC2.value+' 40px)';
+	};
+
+
+};
+</script>
+</head>
+
+<body>
+color1:<input type="color" id="c1" value="#000000">
+color2:<input type="color" id="c2" value="#ffffff">
+<div class="box">
+	<div class="bar"></div>
+</div>
+
+</body>
+</html>

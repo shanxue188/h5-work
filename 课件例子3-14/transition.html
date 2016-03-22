@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+div{width:200px;height:200px;background:#ccc;margin:100px auto;}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+	var oDiv = document.querySelector('#div1');
+	oDiv.onclick = function(){
+		oDiv.style.WebkitTransition = '1s all ease';
+		oDiv.style.width='400px';
+		oDiv.style.height='400px';
+		oDiv.style.background='red';
+
+		oDiv.addEventListener('transitonend',function(){
+			alert(1);
+		},false);
+		
+	
+	
+	
+	};
+
+
+},false);
+</script>
+</head>
+
+<body>
+<div id="div1"></div>
+</body>
+</html>

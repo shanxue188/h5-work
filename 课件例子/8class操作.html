@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style></style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+	var oDiv = document.querySelector('div');
+	var oBtn = document.querySelector('input');
+	oBtn.onclick = function(){
+		//oDiv.classList.add('active'); 只能增加一个参数
+		//oDiv.classList.remove('on','box'); 可以写多个参数
+		//oDiv.classList.contains('on');  包含on
+		//oDiv.classList //所有的class
+		oDiv.classList.toggle('on');//切换 on
+	
+	};
+	
+
+},false);
+</script>
+</head>
+
+<body>
+<input type="button"value="按钮">
+<div class="box on div1"></div>
+</body>
+</html>
